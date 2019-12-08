@@ -2,17 +2,19 @@
 
 def divs(x):
     div = []
-    for i in range(2, int(x ** 0.5) + 1):
+    if (x % 2 == 0):
+        return 0
+    for i in range(3, int(x ** 0.5) + 1, 2):
         if (x % i == 0):
             div.append(i)
-    return div
+    return (div == [])
 
 def main():
-    count = 0
+    count = 1 #i == 2
     i = 1
     while count < 10001:
-        i += 1
-        if divs(i) == []:
+        i += 2
+        if divs(i):
             count += 1
 
     print(i)
